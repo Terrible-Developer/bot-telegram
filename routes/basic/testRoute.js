@@ -28,4 +28,27 @@ const respondTest = function(req, res){
     });
 }
 
+const obligatoryPrequelMeme = function(req, res){
+    const { message } = req.body;
+
+    if(!message || message.text.toLowerCase() !== 'hello there'){
+        return res.end();
+    }
+
+    axios.post(
+        process.env.BOT_URL + "/sendMessage",
+        {
+            chat_id: message.chat.id,
+            text: "*muffled voice* \nGENERAL KENOBI!"
+        }
+    ).then(response => {
+        console.log("Another happy landing");
+        res.end("ok");
+    }).catch(err => {
+        console.log("Impossible. Perhaps the archives are incomplete. \nError: ", err);
+        res.end("*angery grievous noises*");
+    });
+}
+
 module.exports.respondTest = respondTest;
+module.exports.obligatoryPrequelMeme = obligatoryPrequelMeme;
