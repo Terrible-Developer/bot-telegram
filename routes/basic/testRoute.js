@@ -1,4 +1,3 @@
-const bodyParser = require('body-parser');
 const axios = require('axios');
 
 const respondTest = function(req, res){
