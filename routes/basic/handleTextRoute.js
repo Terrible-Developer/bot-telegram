@@ -20,10 +20,8 @@ const textHandler = function(messageObj){
         }
     ).then(response => {
         console.log('Resposta enviada');
-        res.end('Ok');
     }).catch(err => {
         console.log('Erro: ', err);
-        res.end(err);
     });
 }
 
