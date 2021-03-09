@@ -1,5 +1,19 @@
 const axios = require('axios');
 
+const { textHandler } = require('./routes/basic/handleTextRoute.js');
+
+const respondMessage = function(req, res){
+    const { message } = req.body;
+
+    if(!message){
+        return res.end();
+    }
+
+    if(message.text !== null && message.text !== undefined){
+        textHandler(message);
+    }
+}
+
 const respondTest = function(req, res){
     const { message } = req.body;
 
@@ -50,5 +64,5 @@ const obligatoryPrequelMeme = function(req, res){
     });
 }
 
-module.exports.respondTest = respondTest;
+module.exports.respondMessage = respondMessage;
 module.exports.obligatoryPrequelMeme = obligatoryPrequelMeme;
