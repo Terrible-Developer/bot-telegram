@@ -7,7 +7,7 @@ var app = express();
 
 const port = process.env.PORT || 3000;
 
-const { respondMessage } = require('./routes/basic/testRoute.js');
+const { respondMessage } = require('./routes/basic/mainRoute.js');
 
 app.use(bodyParser.json()); //Pra receber o formato application/json
 app.use(
