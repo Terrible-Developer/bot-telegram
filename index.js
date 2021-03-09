@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
+require('dotenv').config();
+
 var app = express();
 
 const port = process.env.PORT || 3000;
@@ -27,7 +29,7 @@ app.post("/new-message", function(req, res){
 
     //Envia a requisição pra api do telegram
     axios.post(
-        "https://api.telegram.org/bot1643003652:AAGiCMdsMppZW4LCCeVZGgGZAc203xcj4E0/sendMessage",
+        process.env.BOT_URL + "/sendMessage",
         {
             chat_id: message.chat.id,
             text: 'tested'
