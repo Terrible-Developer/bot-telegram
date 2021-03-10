@@ -65,3 +65,12 @@ const obligatoryPrequelMeme = function(req, res){
 
 module.exports.respondMessage = respondMessage;
 module.exports.obligatoryPrequelMeme = obligatoryPrequelMeme;
+
+//const { Telegraf } = require('telegraf');
+//
+//const bot = new Telegraf(process.env.BOT_TOKEN);
+//
+//bot.hears('test', ctx => ctx.reply('tested'));
+//
+//
+//bot.launch();
