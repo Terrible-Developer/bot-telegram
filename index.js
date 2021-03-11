@@ -23,7 +23,8 @@ messageRoutes(bot);
 testMessage(bot);
 
 
-bot.launch();
+bot.startPolling();
+//bot.launch();
 
 app.listen(port, () => {
     console.log(`App running on port ${port}`);
