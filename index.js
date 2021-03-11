@@ -1,29 +1,20 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const { Telegraf } = require('telegraf');
 
 require('dotenv').config();
 
-var app = express();
+const { testMessage, commandRoutes, messageRoutes } = require('./routes/basic/mainRoute.js');
 
-const port = process.env.PORT || 3000;
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
-const { respondMessage, respondTest } = require('./routes/basic/mainRoute.js');
-
-app.use(bodyParser.json()); //Pra receber o formato application/json
-app.use(
-    bodyParser.urlencoded(
-        {
-            extended: true
-        }
-    )
-); //Pra reconhecer o formato application/x-www-form-urlencoded
-
-app.post("/new-message", function(req, res){
-    //respondMessage(req, res);
-    respondTest(req, res);
+bot.use(async (ctx, next) => {
+    const start = new Date();
+    await next();
+    const response_time = new Date() - start;
 });
 
-//Starta o servidor
-app.listen(port, function(){
-    console.log("Telegram Bot Listening at port ", port);
-});
+commandRoutes(bot);
+messageRoutes(bot);
+testMessage(bot);
+
+
+bot.launch();
