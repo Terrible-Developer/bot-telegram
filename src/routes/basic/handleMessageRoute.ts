@@ -1,7 +1,8 @@
 //const axios = require('axios');
+import { Telegraf, Context } from 'telegraf';
 
 
-const messagesHandler = function(bot){
+const messagesHandler = function(bot: Telegraf){
     bot.on('text', ctx => {
         //console.log(ctx.message.text); //debug
 
@@ -16,9 +17,11 @@ const messagesHandler = function(bot){
         /*Resposta de conspiração*/
         else if(ctx.message.text.includes("9/11") || ctx.message.text.toLowerCase().includes("11 de setembro")){
             //ctx.reply("unfinished functionality");
-            ctx.replyWithPhoto({ source: __dirname + '/../../assets/images/bush.jpeg' });
+            ctx.replyWithPhoto({ source: __dirname + '/../../../assets/images/bush.jpeg' });
         }
     });
 }
 
-module.exports.messagesHandler = messagesHandler;
+export {
+    messagesHandler
+}
