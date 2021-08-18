@@ -3,7 +3,7 @@ import express from 'express';
 import { testMessage, commandRoutes, messageRoutes } from './routes/basic/mainRoute';
 
 const app = express();
-const port: any = process.env.PORT || 3000;
+const port: any = process.env.PORT || 8080;
 require('dotenv').config();
 
 

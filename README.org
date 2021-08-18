@@ -1,0 +1,7 @@
+#+TITLE: Readme
+
+* Telegram Bot
+Este é meu bot para Telegram. Ele é escrito em Typescript, e usa a biblioteca Telegraf para se comunicar com a API telegram. Originalmente, este projeto ficou como uma espécie de template, mas resolvi voltar e, além de adaptar para Typescript, expandir suas funcionalidades e realmente usá-lo.
+Não existe nenhuma razão específica para o bot existir, criei apenas para aprender, e acabei continuando.
+
+Eventualmente vou aumentar este readme, mas por enquanto é isso.

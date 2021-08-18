@@ -1,6 +1,7 @@
 //const axios = require('axios');
 import { Telegraf, Context } from 'telegraf';
 import { serviceRedirect } from '../service/mainServiceRoute';
+import { downloadVideo } from '../utils/youtubeDl';
 
 const commandsHandler = function(bot: Telegraf){
     /*Test command*/
@@ -14,7 +15,9 @@ const commandsHandler = function(bot: Telegraf){
     });
 
     bot.command('downloadYoutube', ctx => {
-        ctx.reply(`This feature is not finished. URL: ${ctx.message.text.split(" ")[1]}`);
+        ctx.reply('Baixando vídeo. \nPor favor aguarde, este processo pode levar algum tempo dependendo da velocidade da conexão e tamanho do vídeo.');
+        downloadVideo(ctx);
+        //ctx.reply(`This feature is not finished. URL: ${ctx.message.text.split(" ")[1]}`);
     });
 }
 
