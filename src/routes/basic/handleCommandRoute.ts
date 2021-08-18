@@ -21,6 +21,11 @@ const commandsHandler = function(bot: Telegraf){
     });
 }
 
+//ideias de comando
+// downloader de música // só áudio
+// agenda // marcar coisas e lembrar após x tempo
+// previsão do tempo //
+
 export {
     commandsHandler
 }
